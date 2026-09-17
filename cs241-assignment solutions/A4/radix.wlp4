@@ -1,0 +1,76 @@
+
+long wain (long n, long m) {
+
+    long ret = 0;
+    long zeroAscii = 48;
+    long AAscii = 65;
+
+    long remainder = 0;
+    long quotient = 0;
+
+    long* digits = NULL;
+    long len = 0;
+
+    long maxLen = 0;
+    long nCopy = 0;
+
+    if (n < 0) {
+        ret = 1;
+    }
+    else {
+
+        if (m < 2) {
+            ret = 2;
+        }
+        else {
+            if (m > 36) {
+                ret = 2;
+            }
+            else {}
+        }
+    }
+
+    if (ret == 0) {
+
+        if (n == 0) {
+            putchar(zeroAscii);
+        }
+        else {
+
+            nCopy = n;
+            while (nCopy > 0) {
+                nCopy = nCopy / m;
+                maxLen = maxLen + 1;
+            }
+
+            digits = new long[maxLen];
+
+            while (n > 0) {
+
+                quotient = n / m;
+                remainder = n - (quotient * m);
+
+                if (remainder < 10) {
+                    *(digits + len) = remainder + zeroAscii;
+                }
+                else {
+
+                    *(digits + len) = remainder + AAscii - 10;
+                }
+                len = len + 1;
+                n = quotient;
+            }
+
+            while (len > 0) {
+                len = len - 1;
+                putchar(*(digits + len));
+            }
+            delete [] digits;
+            putchar(10);
+        }
+
+    }
+    else {}
+
+    return ret;
+}

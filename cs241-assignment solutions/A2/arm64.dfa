@@ -1,0 +1,55 @@
+.ALPHABET
+0-9 a-z A-Z [ ] , : . -
+.STATES
+start
+dot
+DOTID!
+ID!
+LABEL!
+zero!
+zerox
+HEXINT!
+xonly!
+xn!
+xnn!
+xz!
+xzr!
+COMMA!
+LBRACK!
+RBRACK!
+neg
+INT!
+.TRANSITIONS
+start       .               dot
+dot         a-z A-Z 0-9     DOTID
+DOTID       a-z A-Z 0-9     DOTID
+start       a-w y-z A-Z     ID
+ID          a-z A-Z 0-9     ID
+ID          :               LABEL
+start       0               zero
+zero        x               zerox
+zerox       a-f A-F 0-9     HEXINT
+HEXINT      a-f A-F 0-9     HEXINT
+start       x               xonly
+xonly       a-y A-Z         ID
+xonly       :               LABEL
+xonly       0-9             xn
+xn          0-9             xnn
+xn          a-z A-Z         ID
+xn          :               LABEL
+xnn         a-z A-Z 0-9     ID
+xnn         :               LABEL
+xonly       z               xz
+xz          r               xzr
+xz          a-q s-z A-Z 0-9 ID
+xz          :               LABEL
+xzr         a-z A-Z 0-9     ID
+xzr         :               LABEL
+start       ,               COMMA
+start       [               LBRACK
+start       ]               RBRACK
+start       -               neg
+neg         1-9             INT
+start       1-9             INT
+INT         0-9             INT
+.INPUT

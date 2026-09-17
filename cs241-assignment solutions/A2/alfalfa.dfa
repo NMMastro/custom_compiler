@@ -1,0 +1,32 @@
+.ALPHABET
+a l f
+.STATES
+start
+first_a
+first_l
+first_f
+second_a
+second_l
+second_f
+third_a!
+.TRANSITIONS
+start       l f     start
+start       a       first_a
+first_a     a       first_a
+first_a     l       first_l
+first_a     f       start
+first_l     f       first_f
+first_l     a       first_a
+first_l     l       start
+first_f     a       second_a
+first_f     f l     start
+second_a    l       second_l
+second_a    a       first_a
+second_a    f       start
+second_l    f       second_f
+second_l    a       first_a
+second_l    l       start
+second_f    a       third_a
+second_f    l f     start
+third_a     a l f   third_a 
+.INPUT

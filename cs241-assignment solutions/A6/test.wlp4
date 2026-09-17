@@ -1,0 +1,27 @@
+long eat(long *food) {
+  return 241;
+}
+
+long p(long p, long* q) {
+  long r = 241;
+  return eat(q);
+}
+
+long q(long* q, long r) {
+  return p(eat(q), q);
+}
+
+long r(long a, long b) {
+  long p = 241;
+  long q = 241;
+  long* n = NULL;
+  return r(p, eat(n));
+}
+
+long loong(long a, long b, long c, long d, long e, long f) {
+  return 0;
+}
+
+long wain(long* a, long b) {
+  return r(q(a, p(b, a)), loong(1, 2, 3, 4, 5, 6));
+}

@@ -1,0 +1,12 @@
+long wain(long* a, long b) {
+  long* p = NULL;
+  long result = 0;
+
+  if(a < p) {
+    result = 241;
+  } else {
+    result = 1;
+  }
+
+  return result;
+}
