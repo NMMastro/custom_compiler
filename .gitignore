@@ -1,3 +1,9 @@
 cs241/
+cs241-assignment-solutions/
 
 .DS_Store
+.vscode
+
+# build outputs
+bin/
+build/
