@@ -1,9 +1,0 @@
-long wain(long a, long b) {
-  long c = 241;
-  println(a);
-  println(b);
-  println(c);
-  putchar(65);
-  putchar(10);
-  return a + b;
-}
