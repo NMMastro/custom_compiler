@@ -147,7 +147,7 @@ src/common/    tokens, DFA + maximal munch, parse tree and its text formats
 src/nccl/      lexer, SLR(1) parser (+ grammar tables), type checker, code generator
 src/arm64/     ISA table, assembler, ARMCOM container, linker, emulator
 src/tools/     one main() per command-line tool
-runtime/       print.com and alloc.com (prebuilt runtime libraries), print.asm
+runtime/       print.com and alloc.com (prebuilt runtime libraries)
 examples/      NCCL programs, hand-written assembly, the relocating loader
 tests/         one suite per stage; golden/ holds reference outputs
 docs/          ARCHITECTURE · NCCL · ARM64 · ARMCOM · CODEGEN · BUILD_PLAN

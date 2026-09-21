@@ -79,8 +79,7 @@ custom_compiler/
 │       asm link emu disasm                           (back end)
 │       dfa smm                                       (generic automata tools)
 │       cli.h                   shared argument parsing and the error contract
-├── runtime/                    print.com, alloc.com (prebuilt runtime libraries),
-│                               print.asm (source for print)
+├── runtime/                    print.com, alloc.com (prebuilt runtime libraries)
 ├── examples/
 │   ├── nccl/                   showcase NCCL programs
 │   ├── asm/                    hand-written ARM64: tac, increasing (+compare), stirling
