@@ -5,13 +5,13 @@
 **ARM64** machine code. It includes every layer of the classic pipeline:
 
 ```
- source.nccl ─scan─▶ tokens ─parse─▶ parse tree ─typecheck─▶ typed tree ─codegen─▶ prog.asm
-                                                                                       │
-                       runtime/print.com   runtime/alloc.com                     asm --armcom
-                                   │              │                                    │
-                                   └───────▶    link    ◀──── prog.com ◀───────────────┘
-                                                 │
-                                          --strip ▶ prog.bin ───▶ emu [-a arr] ▶ stdout, x0
+source.nccl ─scan─▶ tokens ─parse─▶ parse tree ─typecheck─▶ typed tree ─codegen─▶ prog.asm ─┐
+                                                                                            │
+  ┌─────────────────────────────────────────────────────────────────────────────────────────┘
+  │
+  └─▶ asm --armcom ─▶ prog.com ──────────┐
+                     runtime/print.com ──┼─▶ link --strip ─▶ prog.bin ─▶ emu [-a arr] ─▶ stdout, x0
+                     runtime/alloc.com ──┘
 ```
 
 Every arrow is a documented text or binary format, so each stage can be run,
